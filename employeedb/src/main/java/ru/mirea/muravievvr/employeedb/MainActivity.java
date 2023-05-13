@@ -16,16 +16,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         AppDatabase db = App.getInstance().getDatabase();
-        EmployeeDao employeeDao = db.employeeDao();
-        Employee employee = new Employee();
-        employee.id = 1;
-        employee.name = "John Smith";
-        employee.salary = 10000;
-        employeeDao.insert(employee);
-        List<Employee> employees = employeeDao.getAll();
-        employee = employeeDao.getById(1);
-        employee.salary = 20000;
-        employeeDao.update(employee);
-        Log.d(TAG, employee.name + " " + employee.salary);
+        SuperheroDao superheroDao = db.employeeDao();
+        Superhero superhero = new Superhero();
+        superhero.id = 1;
+        superhero.name = "Batman";
+        superhero.power = "black color";
+        superheroDao.insert(superhero);
+        List<Superhero> superheroes = superheroDao.getAll();
+        superhero = superheroDao.getById(1);
+        superhero.power = "Money";
+        superheroDao.update(superhero);
+        Log.d(TAG, superhero.name + " " + superhero.power);
     }
 }
